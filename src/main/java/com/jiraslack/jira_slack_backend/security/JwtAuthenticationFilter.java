@@ -1,5 +1,6 @@
 package com.jiraslack.jira_slack_backend.security;
 
+import com.jiraslack.jira_slack_backend.service.RefreshTokenService;
 import io.jsonwebtoken.Jwt;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -25,6 +26,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     @Autowired
     private UserDetailsService userDetailsService;
+
+    @Autowired
+    private RefreshTokenService refreshTokenService;
 
 
     @Override
